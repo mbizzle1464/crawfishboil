@@ -1,0 +1,22 @@
+{
+  "name": "crawfishboil",
+  "version": "1.0.0",
+  "description": "RSVP database ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbizzle1464/crawfishboil.git"
+  },
+  "author": "Michael Bizzle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbizzle1464/crawfishboil/issues"
+  },
+  "homepage": "https://github.com/mbizzle1464/crawfishboil#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1"
+  }
+}
