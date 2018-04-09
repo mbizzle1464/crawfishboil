@@ -10,3 +10,4 @@ Technologies used:
 * Bootstrap 
 * Javascript
 * Firebase
+* node.js

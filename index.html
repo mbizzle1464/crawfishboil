@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2019 Crawfish Boil</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Jumbotron -->
+        <div class="jumbotron img-responsive vertical-center">
+            <div class="inner">
+                <h1 class="text-center">6th Annual Crawfish Boil
+                </h1>
+                <p class="text-center">Please join David, Ford, and Mike for our annual crawfish boil.</p>
+                <p class="text-center">RSVP below by MM/DD/YYYY.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Entry Form -->
+                <form>
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" id="nameInput">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="">Email Address</label>
+                        <input type="email" class="form-control" id="emailInput">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="">Phone Number</label>
+                        <input type="text" class="form-control" id="phoneInput">
+                    </div>                    
+                    <div class="form-group">
+                        <label for="">Can you make it?</label>
+                        <select class="form-control" id="rsvpInput">
+                            <option>Yes, absolutely!</option>
+                            <option>Sorry! I can't make it.</option>
+                            <option>Maybe, but I have to check with the wife.</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">How many are you thinking will attend?</label>
+                        <select class="form-control" id="numberInput">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                
+                    <button type="submit" class="btn btn-danger" id="attendeeBtn">Submit</button>
+                </form>
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                        </ol>
+                
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div id="carousel-image" class="item active">
+                                <img  style="width:100%;" src="assets/images/one.jpg" alt="Crawfish Boil">
+                            </div>
+                    
+                            <div id="carousel-image" class="item">
+                                <img class="img-responsive" style="width:100%;" src="assets/images/two.jpg" alt="Crawfish Boil">
+                            </div>
+                    
+                            <div id="carousel-image" class="item">
+                                <img class="img-responsive" style="width:100%;" src="assets/images/three.jpg" alt="Crawfish Boil">
+                            </div>
+                            <div id="carousel-image" class="item">
+                                <img class="img-responsive" style="width:100%;" src="assets/images/four.jpg" alt="Crawfish Boil">
+                            </div>
+                            <div id="carousel-image" class="item">
+                                <img class="img-responsive" style="width:100%;" src="assets/images/five.jpg" alt="Crawfish Boil">
+                            </div>   
+                            <div id="carousel-image" class="item">
+                                <img class="img-responsive" style="width:100%;" src="assets/images/six.jpg" alt="Crawfish Boil">
+                            </div>
+                        </div>
+                
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                </div>
+               
+                <!-- Current Attendees-->
+                <div class="panel panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong>List of attendees</strong>
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table table-hover" id='url-table'>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>RSVP Status</th>
+                                    <th># of Attendees</th>
+                                </tr>
+                            </thead>
+                            <tbody id="addAttendee">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
+</body>
+
+</html>
